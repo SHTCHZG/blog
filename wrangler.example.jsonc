@@ -51,6 +51,11 @@
       "binding": "SEND_EMAIL_WORKFLOW",
       "class_name": "SendEmailWorkflow",
     },
+    {
+      "name": "scheduled-publish-workflow",
+      "binding": "SCHEDULED_PUBLISH_WORKFLOW",
+      "class_name": "ScheduledPublishWorkflow",
+    },
   ],
   "durable_objects": {
     "bindings": [
@@ -110,6 +115,11 @@
           "name": "send-email-workflow",
           "binding": "SEND_EMAIL_WORKFLOW",
           "class_name": "SendEmailWorkflow",
+        },
+        {
+          "name": "scheduled-publish-workflow",
+          "binding": "SCHEDULED_PUBLISH_WORKFLOW",
+          "class_name": "ScheduledPublishWorkflow",
         },
       ],
     },
