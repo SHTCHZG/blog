@@ -167,7 +167,7 @@ function RouteComponent() {
 
             <footer className="mt-24 pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground/60 tracking-widest uppercase">
-                <span>End of Article</span>
+                <span>正文结束</span>
               </div>
               <Button
                 variant="ghost"
@@ -222,7 +222,7 @@ function RouteComponent() {
             className="text-muted-foreground/60 group-hover:text-foreground group-hover:-translate-y-1 transition-all duration-300"
           />
           <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/40 group-hover:text-foreground transition-colors duration-300">
-            Top
+            顶部
           </span>
         </button>
       </div>
