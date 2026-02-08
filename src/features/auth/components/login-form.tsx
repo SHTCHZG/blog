@@ -29,7 +29,7 @@ export function LoginForm({ redirectTo }: { redirectTo?: string }) {
   const navigate = useNavigate();
   const previousLocation = usePreviousLocation();
   const queryClient = useQueryClient();
-  const { turnstileProps } = useTurnstile("login");
+  const { isPending: turnstilePending, turnstileProps } = useTurnstile("login");
 
   const {
     register,
@@ -161,7 +161,7 @@ export function LoginForm({ redirectTo }: { redirectTo?: string }) {
 
       <button
         type="submit"
-        disabled={isSubmitting || loginStep !== "IDLE"}
+        disabled={isSubmitting || loginStep !== "IDLE" || turnstilePending}
         className="w-full py-4 bg-foreground text-background text-[10px] font-mono uppercase tracking-[0.3em] hover:opacity-80 transition-all disabled:opacity-30 flex items-center justify-center gap-3"
       >
         {loginStep === "VERIFYING" ? (

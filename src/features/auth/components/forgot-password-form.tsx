@@ -20,7 +20,8 @@ export function ForgotPasswordForm() {
   const [isSent, setIsSent] = useState(false);
   const [sentEmail, setSentEmail] = useState("");
 
-  const { turnstileProps } = useTurnstile("forgot-password");
+  const { isPending: turnstilePending, turnstileProps } =
+    useTurnstile("forgot-password");
 
   const {
     register,
@@ -102,7 +103,7 @@ export function ForgotPasswordForm() {
       <div className="space-y-4">
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || turnstilePending}
           className="w-full py-4 bg-foreground text-background text-[10px] font-mono uppercase tracking-[0.3em] hover:opacity-80 transition-all disabled:opacity-30 flex items-center justify-center gap-3"
         >
           {isSubmitting ? (
